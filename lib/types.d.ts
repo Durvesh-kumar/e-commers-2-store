@@ -4,7 +4,7 @@ type ProductType = {
     discription: string;
     media: [string];
     brand: string;
-    collections: string;
+    collections: string | any;
     tags: [string];
     price: number;
     pay: number;

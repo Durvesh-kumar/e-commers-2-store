@@ -9,7 +9,7 @@ const Query = async({params}:{params:{query:string}}) => {
             product.brand.toLowerCase().includes(params.query.toLowerCase()) ||
             product.category.toLowerCase().includes(params.query.toLowerCase()) ||
             product.title.toLowerCase().includes(params.query.toLowerCase()) ||
-            product.collections.title.toLowerCase().includes(params.query.toLowerCase()) ||
+            product.collections?.title.toLowerCase().includes(params.query.toLowerCase()) ||
             product.tags.map((item)=> item.toLowerCase()).includes(params.query.toLowerCase()) ||
             product.colors.map((item)=> item.toLowerCase()).includes(params.query.toLowerCase())
         ))
