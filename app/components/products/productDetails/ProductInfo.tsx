@@ -4,6 +4,7 @@ import { useCart } from "@/lib/hooks/useCart";
 import { CircleMinus, CirclePlus, Star, StarHalf } from "lucide-react";
 import { useState } from "react";
 import Favouite from "../../Favouite";
+import { useUser } from "@clerk/nextjs";
 
 interface ProductInfoPropes {
     product: ProductType
@@ -14,6 +15,8 @@ const ProductInfo: React.FC<ProductInfoPropes> = ({ product, reviews }) => {
     const [selectSize, setSelectSize] = useState(product?.sizes[0]);
     const [selectColor, setSelectColor] = useState(product?.colors[0]);
     const [quantity, setQuantity] = useState<number>(1);
+
+    const { user } = useUser();
     const Cart = useCart();
 
     const reviewsFilter = reviews?.filter((review: ReviewsType) =>
@@ -132,7 +135,7 @@ const ProductInfo: React.FC<ProductInfoPropes> = ({ product, reviews }) => {
             </div>
 
             <div className="flex items-center justify-center">
-                <button onClick={() => Cart.addItem({ item: product, quantity, color: selectColor, size: selectSize })} className=" py-2 px-14 bg-yellow-500 font-bold text-xl border-2 border-black hover:bg-white shadow-lg  rounded-3xl">Add To Cart</button>
+                <button onClick={() => { user ? Cart.addItem({ item: product, quantity, color: selectColor, size: selectSize }) : "/sign-in" }} className=" py-2 px-14 bg-yellow-500 font-bold text-xl border-2 border-black hover:bg-white shadow-lg  rounded-3xl">Add To Cart</button>
             </div>
 
         </div>
