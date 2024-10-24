@@ -135,7 +135,7 @@ const ProductInfo: React.FC<ProductInfoPropes> = ({ product, reviews }) => {
             </div>
 
             <div className="flex items-center justify-center">
-                <button onClick={() => { user ? Cart.addItem({ item: product, quantity, color: selectColor, size: selectSize }) : "/sign-in" }} className=" py-2 px-14 bg-yellow-500 font-bold text-xl border-2 border-black hover:bg-white shadow-lg  rounded-3xl">Add To Cart</button>
+                <button onClick={() => { user ? Cart.addItem({ item: product, quantity, color: selectColor, size: selectSize }) : window.location.replace("/sign-in") }} className=" py-2 px-14 bg-yellow-500 font-bold text-xl border-2 border-black hover:bg-white shadow-lg  rounded-3xl">Add To Cart</button>
             </div>
 
         </div>
