@@ -16,11 +16,7 @@ const Watches = async () => {
     return (
         <div>
             <Link href={`/products/productCategory/${category}`} >
-<<<<<<< HEAD
-            <Image src="/watch.png" alt="watch" width={1000} height={2000} className="w-full h-[500px] mix-blend-multiply py-10" />
-=======
             <Image src="/89670937352801.573d3df298ad9.jpg" alt="watch" width={1000} height={1000} className="w-full h-[600px] mix-blend-multiply py-10" />
->>>>>>> 0dbb01e (Add banner)
             </Link>
             <div className="flex flex-wrap mx-auto gap-10 justify-center items-center">
             {
